@@ -8,10 +8,10 @@ const myarray =[
 ]
  
 buttonel.addEventListener('click',function(){
- let mailel = document.getElementById('mailel').value;
+ let mailel = document.getElementById('mailel').value.toLowerCase();
  let match = false;
   for(let x = 0; x < myarray.length; x++){
-    let currmail = myarray[x];
+    let currmail = myarray[x].toLowerCase();
     if (currmail === mailel){
      match=true;
     }
