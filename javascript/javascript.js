@@ -28,7 +28,32 @@ buttonel.addEventListener('click',function(){
 
 //DADI
 
+let dicebutton = document.getElementById('dicebutton')
+let risultato= document.getElementById('risultato')
+let tuorisultato = document.getElementById('tuorisultato')
+let risultatopc = document.getElementById('risultatopc')
+dicebutton.addEventListener('click',function(){
+    const miodado =  Math.floor(getRandomNumber(1, 6));
+    const dadopc =  Math.floor(getRandomNumber(1, 6));
+    if (miodado < dadopc){
+       risultato.innerHTML=`Hai perso`
+    } 
+    else if(miodado === dadopc){
+        risultato.innerHTML=`Hai Pareggiato`
+    }
+    else{
+        risultato.innerHTML=`Hai vinto`
+    }
+    tuorisultato.innerHTML=`Il tuo numero è ${miodado}`;
+    risultatopc.innerHTML=`Il numero del tuo sfidante è ${dadopc}`;
+})
 
+
+
+
+function getRandomNumber(min, max) {
+    return Math.random() * (max - min) + min;
+}
 
 
 
